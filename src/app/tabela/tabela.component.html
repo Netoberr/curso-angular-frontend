@@ -1,0 +1,28 @@
+<div class="container mt-4" >
+    <h1>Tabela de Apontamentos</h1>
+<table class="table">
+    <thead>
+        <h2 *ngIf="!isResultLoaded">Loading</h2>      
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Atividade</th>  
+        <th scope="col">Horas</th>  
+        <th scope="col">Data</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ApontamentItem of ApontamentArray">
+        <td>{{ApontamentItem.id  }}</td>
+        <td>{{ApontamentItem.nome }}</td>
+        <td>{{ApontamentItem.atividade }}</td>
+        <td>{{ApontamentItem.horas }}</td>
+        <td>{{ApontamentItem.date }}</td>
+        <td>
+            <button type="button" class="btn btn-success" (click)="setUpdate(ApontamentItem)">Edit</button>
+            <button type="button" class="btn btn-danger" (click)="setDelete(ApontamentItem)">Delete</button>            
+        </td>
+        </tr>          
+    </tbody>
+    </table>
+</div>
